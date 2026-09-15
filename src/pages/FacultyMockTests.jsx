@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import FacultyMockTestRetakePanel from
+  "../components/FacultyMockTestRetakePanel";
 import apiService from "../services/apiService";
 import "../styles/facultyQuestionBank.css";
 
@@ -1623,7 +1625,7 @@ function FacultyMockTests() {
                     60 Marks / 60 Questions
                     — 15 Aptitude + 15
                     Reasoning + 30 Technical
-                    — Pass 65%
+                    — Pass 45%
                   </div>
                 </div>
               </div>
@@ -2138,6 +2140,9 @@ function FacultyMockTests() {
               </div>
             )}
         </section>
+           <FacultyMockTestRetakePanel
+          onUnauthorized={handleUnauthorized}
+        />
       </div>
     </main>
   );
