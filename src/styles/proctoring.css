@@ -1,0 +1,740 @@
+/* =========================================
+   PROCTORING PAGE
+   ========================================= */
+
+.proctoring-page {
+  min-height: 100vh;
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(37, 99, 235, 0.2),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(124, 58, 237, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #06111f 0%,
+      #07182d 50%,
+      #030914 100%
+    );
+
+  color: #ffffff;
+}
+
+.proctoring-container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.proctoring-header {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.proctoring-heading span {
+  color: #60a5fa;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.proctoring-heading h1 {
+  margin-top: 8px;
+
+  color: #ffffff;
+  font-size: 29px;
+  line-height: 1.2;
+}
+
+.proctoring-heading p {
+  margin-top: 7px;
+
+  color: #8fa4ba;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.proctoring-back-button {
+  min-height: 42px;
+  padding: 0 17px;
+
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  border-radius: 10px;
+
+  background: rgba(15, 35, 58, 0.65);
+  color: #bfdbfe;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.proctoring-back-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: rgba(22, 48, 76, 0.85);
+  border-color: rgba(96, 165, 250, 0.55);
+}
+
+/* =========================================
+   INSTRUCTION LAYOUT
+   ========================================= */
+
+.proctoring-instruction-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(340px, 0.9fr);
+  gap: 22px;
+}
+
+.proctoring-card {
+  padding: 26px;
+
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 35, 58, 0.9),
+      rgba(7, 22, 40, 0.86)
+    );
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(14px);
+}
+
+.proctoring-card-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid rgba(148, 163, 184, 0.13);
+}
+
+.proctoring-card-header h2 {
+  color: #ffffff;
+  font-size: 19px;
+}
+
+.proctoring-card-header p {
+  margin-top: 6px;
+
+  color: #8097ae;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* =========================================
+   TEST INFORMATION
+   ========================================= */
+
+.proctoring-test-details {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.proctoring-detail {
+  padding: 15px;
+
+  border: 1px solid rgba(96, 165, 250, 0.14);
+  border-radius: 11px;
+
+  background: rgba(6, 20, 38, 0.48);
+}
+
+.proctoring-detail span {
+  display: block;
+
+  color: #71889f;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.proctoring-detail strong {
+  display: block;
+  margin-top: 7px;
+
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* =========================================
+   ASSESSMENT RULES
+   ========================================= */
+
+.proctoring-rules {
+  margin-top: 22px;
+
+  display: grid;
+  gap: 11px;
+}
+
+.proctoring-rule {
+  padding: 13px 14px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 10px;
+
+  background: rgba(6, 20, 38, 0.38);
+}
+
+.proctoring-rule-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  background: rgba(37, 99, 235, 0.15);
+  color: #93c5fd;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.proctoring-rule p {
+  color: #9eb1c6;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* =========================================
+   CAMERA PREVIEW
+   ========================================= */
+
+.proctoring-camera {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 15px;
+
+  background: #020711;
+}
+
+.proctoring-camera video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.proctoring-camera-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+
+  color: #71889f;
+  text-align: center;
+}
+
+.proctoring-camera-placeholder strong {
+  color: #a9bdd1;
+  font-size: 14px;
+}
+
+.proctoring-camera-placeholder p {
+  max-width: 250px;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.proctoring-camera-label {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+
+  padding: 6px 9px;
+
+  border: 1px solid rgba(74, 222, 128, 0.28);
+  border-radius: 999px;
+
+  background: rgba(6, 20, 38, 0.82);
+  color: #86efac;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================
+   PERMISSION STATUS
+   ========================================= */
+
+.proctoring-status {
+  margin-top: 15px;
+  padding: 12px 13px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.proctoring-status.pending {
+  color: #fde68a;
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+}
+
+.proctoring-status.granted {
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.28);
+}
+
+.proctoring-status.denied {
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.proctoring-actions {
+  margin-top: 19px;
+
+  display: grid;
+  gap: 10px;
+}
+
+.proctoring-primary-button,
+.proctoring-secondary-button {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 18px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.proctoring-primary-button {
+  border: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 10px 28px rgba(37, 99, 235, 0.28);
+}
+
+.proctoring-secondary-button {
+  border: 1px solid rgba(96, 165, 250, 0.28);
+
+  background: rgba(15, 35, 58, 0.7);
+  color: #bfdbfe;
+}
+
+.proctoring-primary-button:hover:not(:disabled),
+.proctoring-secondary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.proctoring-primary-button:disabled,
+.proctoring-secondary-button:disabled,
+.proctoring-back-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* =========================================
+   LIVE TEST LAYOUT
+   ========================================= */
+
+.proctoring-test-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 310px;
+  gap: 20px;
+}
+
+.proctoring-test-header {
+  margin-bottom: 20px;
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  border: 1px solid rgba(96, 165, 250, 0.17);
+  border-radius: 14px;
+
+  background: rgba(10, 28, 48, 0.88);
+}
+
+.proctoring-test-header h1 {
+  color: #ffffff;
+  font-size: 19px;
+}
+
+.proctoring-test-header p {
+  margin-top: 5px;
+
+  color: #8097ae;
+  font-size: 11px;
+}
+
+.proctoring-timer {
+  min-width: 110px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 10px;
+
+  background: rgba(217, 119, 6, 0.1);
+  color: #fde68a;
+
+  text-align: center;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+/* =========================================
+   QUESTION AREA
+   ========================================= */
+
+.proctoring-question-card {
+  padding: 25px;
+
+  border: 1px solid rgba(96, 165, 250, 0.17);
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 35, 58, 0.9),
+      rgba(7, 22, 40, 0.86)
+    );
+}
+
+.proctoring-question-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.proctoring-question-card h2 {
+  margin-top: 18px;
+
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.proctoring-options {
+  margin-top: 22px;
+
+  display: grid;
+  gap: 11px;
+}
+
+.proctoring-option {
+  padding: 14px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 10px;
+
+  background: rgba(6, 20, 38, 0.4);
+  color: #a9bdd1;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.proctoring-option:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+  background: rgba(37, 99, 235, 0.09);
+}
+
+.proctoring-option.selected {
+  border-color: #60a5fa;
+  background: rgba(37, 99, 235, 0.16);
+  color: #ffffff;
+}
+
+.proctoring-option input {
+  margin-top: 2px;
+  accent-color: #3b82f6;
+}
+
+.proctoring-question-actions {
+  margin-top: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 11px;
+}
+
+/* =========================================
+   PROCTORING SIDE PANEL
+   ========================================= */
+
+.proctoring-side-panel {
+  align-self: start;
+  position: sticky;
+  top: 20px;
+
+  display: grid;
+  gap: 15px;
+}
+
+.proctoring-warning-count {
+  padding: 15px;
+
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  border-radius: 11px;
+
+  background: rgba(217, 119, 6, 0.09);
+  color: #fde68a;
+
+  text-align: center;
+}
+
+.proctoring-warning-count strong {
+  display: block;
+  font-size: 23px;
+}
+
+.proctoring-warning-count span {
+  display: block;
+  margin-top: 5px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================
+   POPUPS AND OVERLAYS
+   ========================================= */
+
+.proctoring-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(1, 6, 15, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.proctoring-popup {
+  width: min(430px, 100%);
+  padding: 28px;
+
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #142236,
+      #081526
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.5);
+
+  text-align: center;
+}
+
+.proctoring-popup-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(220, 38, 38, 0.14);
+  color: #fca5a5;
+
+  font-size: 27px;
+}
+
+.proctoring-popup h2 {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.proctoring-popup p {
+  margin-top: 11px;
+
+  color: #9eb1c6;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   FEEDBACK
+   ========================================= */
+
+.proctoring-error,
+.proctoring-information {
+  margin-bottom: 18px;
+  padding: 13px 14px;
+
+  border-radius: 11px;
+
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.proctoring-error {
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.proctoring-information {
+  color: #bfdbfe;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .proctoring-instruction-grid,
+  .proctoring-test-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .proctoring-side-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .proctoring-page {
+    padding: 22px 14px;
+  }
+
+  .proctoring-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .proctoring-heading h1 {
+    font-size: 25px;
+  }
+
+  .proctoring-back-button {
+    width: 100%;
+  }
+
+  .proctoring-card,
+  .proctoring-question-card {
+    padding: 21px 17px;
+  }
+
+  .proctoring-test-details {
+    grid-template-columns: 1fr;
+  }
+
+  .proctoring-test-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .proctoring-timer {
+    width: 100%;
+  }
+
+  .proctoring-question-actions {
+    flex-direction: column;
+  }
+}
